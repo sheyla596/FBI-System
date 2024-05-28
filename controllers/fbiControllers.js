@@ -6,12 +6,12 @@ import jwt from "jsonwebtoken";
 
 const secretKey = process.env.SECRET_KEY;
 
-//Ruta raíz
+
 export const home = async (req, res) => {
   res.sendFile(path.join(__dirname, "../views/index.html"));
 };
 
-//generar token
+
 export const generarToken = (req, res) => {
   try {
     const token = jwt.sign(agentes, secretKey);
@@ -69,7 +69,7 @@ export const loginAgente = (req, res) => {
 };
 
 
-//decodificar el token
+
 export const validarAgente=(req,res)=>{
   let {token}= req.query;
   try{
